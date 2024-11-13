@@ -1,1 +1,17 @@
-{}
+{
+  "tasks": [],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Shopping"
+    },
+    {
+      "id": "2",
+      "name": "Study"
+    },
+    {
+      "id": "3",
+      "name": "Work"
+    }
+  ]
+}

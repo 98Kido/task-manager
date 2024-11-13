@@ -1,85 +1,153 @@
-/* General Styles */
-.app {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  transition: background-color 0.3s ease;
-  max-width: 500px;
-  margin: 0 auto; /* Center the app */
-  text-align: center; /* Center align text */
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.dark {
-  background-color: #121212;
-  color: white;
+body {
+  background-color: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
 }
 
-.header {
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
-.task-input-container {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  gap: 15px; /* Add spacing between elements */
-  align-items: center; /* Center-align the input fields and button */
+/* Task Manager Container */
+.task-manager {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.task-input-container input {
+/* Input Fields and Buttons */
+input[type="text"] {
+  width: calc(100% - 120px);
   padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%; /* Make inputs full width */
-  max-width: 400px; /* Set a max width for better alignment */
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
 }
 
-.task-input-container button {
-  padding: 10px;
-  background-color: #6c5b7b;
-  color: white;
+input[type="text"]:focus {
+  border-color: #3498db;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
-  width: 100%; /* Full width of parent container */
-  max-width: 200px; /* Restrict button width */
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-/* Task List Styling */
-.task-list {
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Task List */
+ul {
   list-style-type: none;
   padding: 0;
+  margin-top: 20px;
 }
 
-.task-list li {
+li {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 5px;
-  border-radius: 5px;
+  justify-content: space-between;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  background-color: #fafafa;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
 
-.task-list li.completed {
+li:hover {
+  background-color: #f1f1f1;
+}
+
+li span {
+  flex-grow: 1;
+  font-size: 1.2rem;
+}
+
+li button {
+  padding: 6px 12px;
+  margin-left: 10px;
+  background-color: #e74c3c;
+  font-size: 0.9rem;
+}
+
+li button.edit {
+  background-color: #f39c12;
+}
+
+li button.done {
+  background-color: #2ecc71;
+}
+
+li button.undo {
+  background-color: #e67e22;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Search and Add Task Section */
+.search-and-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-and-add input[type="text"] {
+  width: 80%;
+  margin: 10px 0;
+}
+
+/* Task Completion Styles */
+.completed {
   text-decoration: line-through;
-  background-color: #d3d3d3;
+  color: #bdc3c7;
 }
 
-.task-list li button {
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.pending {
+  color: #2ecc71;
 }
 
-/* Dark Mode Styles */
-.dark input {
-  background-color: #333;
-  color: white;
-  border: 1px solid #666;
-}
+/* Responsive Design */
+@media (max-width: 600px) {
+  .task-manager {
+    padding: 15px;
+    width: 100%;
+  }
 
-.dark button {
-  background-color: #355c7d;
+  input[type="text"] {
+    width: calc(100% - 90px);
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
 }
