@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
+/* General Styles */
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+  max-width: 500px;
+  margin: 0 auto; /* Center the app */
+  text-align: center; /* Center align text */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.dark {
+  background-color: #121212;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task-input-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 15px; /* Add spacing between elements */
+  align-items: center; /* Center-align the input fields and button */
+}
+
+.task-input-container input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%; /* Make inputs full width */
+  max-width: 400px; /* Set a max width for better alignment */
+}
+
+.task-input-container button {
+  padding: 10px;
+  background-color: #6c5b7b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; /* Full width of parent container */
+  max-width: 200px; /* Restrict button width */
+}
+
+/* Task List Styling */
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.task-list li.completed {
+  text-decoration: line-through;
+  background-color: #d3d3d3;
+}
+
+.task-list li button {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Dark Mode Styles */
+.dark input {
+  background-color: #333;
+  color: white;
+  border: 1px solid #666;
+}
+
+.dark button {
+  background-color: #355c7d;
 }
